@@ -198,10 +198,13 @@ function secretNumber() {
 
 function timeOutCounter() {
   for (var i = 0; i <= 5; i++) {
-    let ref = i;
-    setTimeout(function() {
-      console.log(ref);
-    }, i * 1000);
+    setTimeout(makeLogInput(i), i * 1000);
   }
 }
 timeOutCounter();
+
+function makeLogInput(input) {
+  return function() {
+    console.log(input);
+  }
+}
